@@ -1,0 +1,61 @@
+:root{
+    --bg-color: #EAF4F7;      /* พื้นหลัง */
+    --card-color: #FFFFFF;    /* การ์ด */
+    --primary: #8DBFCC;       /* ฟ้าอมเขียว */
+    --secondary: #BFDDE6;     /* ฟ้าอ่อน */
+    --accent: #264653;        /* น้ำเงินเข้ม */
+    --text: #2F3E46;          /* สีข้อความ */
+    --subtext: #6B7280;       /* ข้อความรอง */
+    --button: #315C6F;        /* ปุ่ม */
+    --button-hover: #244654;
+}
+
+body{
+    background: linear-gradient(180deg,#EAF4F7,#DCEEF4);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+}
+
+.profile-card{
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.number{
+    background:#A8DADC;
+    color:#264653;
+}
+
+button{
+    background:#315C6F;
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:12px 30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#244654;
+}
+h1,h2{
+    color:#264653;
+}
+
+p{
+    color:#6B7280;
+}
