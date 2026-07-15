@@ -1,61 +1,192 @@
 :root{
-    --bg-color: #EAF4F7;      /* พื้นหลัง */
-    --card-color: #FFFFFF;    /* การ์ด */
-    --primary: #8DBFCC;       /* ฟ้าอมเขียว */
-    --secondary: #BFDDE6;     /* ฟ้าอ่อน */
-    --accent: #264653;        /* น้ำเงินเข้ม */
-    --text: #2F3E46;          /* สีข้อความ */
-    --subtext: #6B7280;       /* ข้อความรอง */
-    --button: #315C6F;        /* ปุ่ม */
-    --button-hover: #244654;
+    --bg:#EAF4F7;
+    --card:#ffffff;
+    --primary:#8DBFCC;
+    --accent:#264653;
+    --text:#2F3E46;
+    --sub:#6B7280;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-    background: linear-gradient(180deg,#EAF4F7,#DCEEF4);
-    color: var(--text);
-    font-family: "Poppins", sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,#EAF4F7,#DCEEF4);
+    color:var(--text);
+    padding:40px;
 }
 
+/* ---------- Profile ---------- */
+
 .profile-card{
-    background: white;
-    border-radius: 25px;
-    padding: 35px;
+    max-width:1100px;
+    margin:0 auto 60px;
+    background:#fff;
+    border-radius:25px;
+    padding:35px;
+    display:flex;
+    align-items:center;
+    gap:30px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.card{
-    background:white;
+.profile-image img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
     border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.3s;
 }
 
-.card:hover{
+.profile-info h1{
+    color:var(--accent);
+    margin-bottom:15px;
+    font-size:38px;
+}
+
+.profile-info p{
+    margin-top:10px;
+    color:var(--sub);
+    line-height:1.7;
+}
+
+/* ---------- Section ---------- */
+
+.bento-section{
+    max-width:1200px;
+    margin:auto;
+    margin-bottom:70px;
+}
+
+.bento-section h2{
+    color:var(--accent);
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+/* ---------- Movie Cards ---------- */
+
+.bento-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.bento-card{
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    position:relative;
+}
+
+.bento-card:hover{
     transform:translateY(-8px);
 }
 
-.number{
+.bento-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.rank-tag{
+    position:absolute;
+    top:15px;
+    left:15px;
     background:#A8DADC;
     color:#264653;
+    padding:7px 15px;
+    border-radius:30px;
+    font-weight:bold;
 }
+
+.bento-card h3{
+    padding:18px 18px 8px;
+}
+
+.bento-card p{
+    padding:0 18px 18px;
+    color:#666;
+}
+
+/* ---------- Song ---------- */
+
+.bento-grid-songs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.song-card{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.song-rank{
+    position:absolute;
+    top:12px;
+    left:12px;
+}
+
+.video-container{
+    width:100%;
+    aspect-ratio:16/9;
+    margin-top:25px;
+}
+
+.video-container iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:15px;
+}
+
+.song-info{
+    margin-top:15px;
+}
+
+.song-info h4{
+    color:var(--accent);
+}
+
+/* ---------- Button ---------- */
 
 button{
     background:#315C6F;
     color:white;
     border:none;
-    border-radius:30px;
-    padding:12px 30px;
+    padding:15px 35px;
+    border-radius:40px;
     cursor:pointer;
+    font-size:16px;
     transition:.3s;
 }
 
 button:hover{
     background:#244654;
 }
-h1,h2{
-    color:#264653;
-}
 
-p{
-    color:#6B7280;
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile-info h1{
+        font-size:30px;
+    }
+
 }
